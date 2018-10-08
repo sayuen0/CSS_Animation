@@ -10,17 +10,28 @@
       background: skyblue;
       cursor: pointer;
       transition: 2s;
+      transition-timing-function: ease;
     }
     .box.moved {
       transform: translate(400px, 0);
       background:red;
     }
+    .box2{ transition-timing-function: ease-out;} /*タッチしたらすぐ動く*/
+    .box3{
+      transition-timing-function: ease-in-out;/*ゆっくり始まって加速 大きくて重そう*/
+      height:100px;
+      background: #333;
+      }
+      .box4{ transition-timing-function: cubic-bezier(0, 1.74, 0.51, 1.63)}/*Chrome Developert Toolsで調整。右に思い切りはみ出してから戻る*/
   </style>
 </head>
 <body>
   <div class="box box1"></div>
   <div class="box box2"></div>
   <div class="box box3"></div>
+  <div class="box box4"></div>
+
+  </div>
   <script>
     (() => {
       'use strict';
